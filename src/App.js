@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import Header from './Header';
+import Tasklist from './Tasklist';
 
 class App extends Component {
   state = {
@@ -29,6 +30,12 @@ class App extends Component {
     return(
       <div className='App'>
       <Header title="Task List" items="9"/>
+
+      { this.state.tasklist.map((t1) => (
+
+          <Tasklist title={t1.title} tasks={t1.tasks} />
+      )
+      ) }
       </div>
     );
   }

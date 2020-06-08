@@ -15,7 +15,7 @@ render(){
 
     return(
       <div className='App'>
-      <Header title="Task List" items="9"/>
+      <Header title="Task List" items={this.state.tasklist.length}/>
 
       {this.state.tasklist.map((t1) => (
 

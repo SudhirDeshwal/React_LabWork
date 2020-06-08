@@ -43,6 +43,14 @@ class App extends Component {
     }
   })}
 
+  handleRemoveTask = (id) => {
+    this.setState((prevState) => {
+      return {
+        tasklist: prevState.tasklist.filter((t) => t.id !== id),
+      };
+    });
+  };
+
 render(){
 
     return(
@@ -54,7 +62,8 @@ render(){
      <Tasklist 
       title={t1.title} 
       item={t1.tasks}
-      id={t1.id} /> 
+      id={t1.id} 
+      removeTask={this.handleRemoveTask}/> 
       ))}
 
       <AddTaskform addtask={this.addNewTask}></AddTaskform>

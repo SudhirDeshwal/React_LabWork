@@ -1,7 +1,6 @@
 import React, { Component} from 'react';
 import Header from './Header';
 import Tasklist from './Tasklist';
-import AddTasks from './AddTasks';
 
 
 class App extends Component {
@@ -16,12 +15,14 @@ render(){
 
     return(
       <div className='App'>
-      <AddTasks ></AddTasks>
       <Header title="Task List" items="9"/>
 
       {this.state.tasklist.map((t1) => (
 
-      <Tasklist title={t1.title} tasks={t1.tasks} />
+      <Tasklist 
+      title={t1.title} 
+      tasks={t1.tasks} 
+      />
       )
       )}
       </div>

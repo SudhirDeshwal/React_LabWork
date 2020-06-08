@@ -7,21 +7,33 @@ class App extends Component {
   state = {
 
     tasklist: [ { title: 'Humber',tasks: ['Task #1' ,'Task #2', 'Task #3'],id: 1,},
-      {title: 'MERN',tasks: ['Lab' ,'Project', 'Quiz'],id: 1, },
-      {title: 'Java',tasks: ['GD' ,'Exam', 'Assignment'],id: 1,}, ],
+      {title: 'MERN',tasks: ['Lab' ,'Project', 'Quiz'],id: 2, },
+      {title: 'Java',tasks: ['GD' ,'Exam', 'Assignment'],id: 3,}, ],
   };
+
+ switchNamehandler =() => {
+
+         this.setState({tasklist : [ { title: 'Humber',tasks: ['Task #1' ,'Task #2', 'Task #3'],id: 1,},
+         {title: 'MERN',tasks: ['Lab' ,'Project', 'Quiz'],id: 2, },
+         {title: 'Java',tasks: ['GD' ,'Exam', 'Assignment'],id: 3,},
+         {title: 'Home',tasks: ['Food' ,'Laundry', 'Homecall'],id: 3,}, ] })
+ }
+
+
 
 render(){
 
     return(
       <div className='App'>
+       <button onClick={this.switchNamehandler}>Click here to Add New Task</button> 
       <Header title="Task List" items={this.state.tasklist.length}/>
 
       {this.state.tasklist.map((t1) => (
 
       <Tasklist 
       title={t1.title} 
-      tasks={t1.tasks} 
+      item={t1.tasks}
+       
       />
       )
       )}

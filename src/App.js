@@ -30,14 +30,14 @@ class App extends Component {
 
  }
 
- addNewTask = (title) => {
+ addNewTask = (title, tasks) => {
 
   this.setState((prevState) => {
 
     return {
       tasklist : [ ...prevState.tasklist , {
         title: title,
-        tasks: ['T1','T2','T3'] ,
+        tasks: tasks ,
         id: (this.previd += 1),}
       ]
     }

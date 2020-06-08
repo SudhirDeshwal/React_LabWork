@@ -3,31 +3,33 @@ import React, { Component } from 'react';
 class AddTaskform extends Component {
 
     state = {
-        value: '',
+        TaskName: '',
       };
 
       handleChange =(e)=>{
             this.setState(  
-            {value:e.target.value}
+            {TaskName:e.target.value}
             )}
 
             handlesubmit = (e) => {
                 e.preventDefault();
-                this.props.addtask(this.state.value);
-               this.setState({ value: '' });
+                this.props.addtask(this.state.TaskName);
+              this.setState({ TaskName: '' });
               };
 
+        
+        
       render(){
 
         return (
          <form  onSubmit={this.handlesubmit}>
          <input type="text"
-         value={this.state.value}
-         onChange = {this.handleChange}
-         
-         ></input>
+       value={this.state.TaskName}
+        placeholder= "Type New TaskHeading here"
+        onChange = {this.handleChange} ></input>
 
-         <input type="submit"></input>
+
+    <input type="submit"></input>
          </form>
          );}
 

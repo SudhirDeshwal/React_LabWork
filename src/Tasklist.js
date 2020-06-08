@@ -7,12 +7,16 @@ const Tasklist = (props) => {
          <div> 
         {/* <input type="text" onChange={props.added}></input>      */}
         <h4>{props.title}</h4>
-        <ul> 
+         <ul>
+    <li>{props.item}</li>
+         </ul>
+
+        {/* <ul> 
           {props.item.map((t) => (
               <li>{t}</li> ) 
           ) }
                 
-          </ul>
+          </ul> */}
         </div>
          
          );

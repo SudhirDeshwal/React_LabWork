@@ -37,7 +37,7 @@ class App extends Component {
     return {
       tasklist : [ ...prevState.tasklist , {
         title: title,
-        tasks: ['newTask #1' ,'newTask #2', 'newTask #3'],
+        tasks: ['T1','T2','T3'] ,
         id: (this.previd += 1),}
       ]
     }

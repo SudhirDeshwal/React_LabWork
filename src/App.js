@@ -19,7 +19,14 @@ class App extends Component {
          {title: 'Home',tasks: ['Food' ,'Laundry', 'Homecall'],id: 3,}, ] })
  }
 
+ taskaddhandler = (event) => {
 
+  this.setState({tasklist : [ { title: 'Humber',tasks: ['Task #1' ,'Task #2', 'Task #3'],id: 1,},
+  {title: 'MERN',tasks: ['Lab' ,'Project', 'Quiz'],id: 2, },
+  {title: event.target.value, tasks: ['GD' ,'Exam', 'Assignment'],id: 3,},
+  {title: 'Home',tasks: ['Food' ,'Laundry', 'Homecall'],id: 3,}, ] })
+
+ }
 
 render(){
 
@@ -33,6 +40,7 @@ render(){
       <Tasklist 
       title={t1.title} 
       item={t1.tasks}
+     added={this.taskaddhandler}
        
       />
       )

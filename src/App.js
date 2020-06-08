@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import Header from './Header';
 import Tasklist from './Tasklist';
+import AddTaskform from './AddTaskform';
 
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
       {title: 'MERN',tasks: ['Lab' ,'Project', 'Quiz'],id: 2, },
       {title: 'Java',tasks: ['GD' ,'Exam', 'Assignment'],id: 3,}, ],
   };
+  previd = 4;
 
  switchNamehandler =() => {
 
@@ -28,23 +30,35 @@ class App extends Component {
 
  }
 
+ addNewTask = (title) => {
+
+  this.setState((prevState) => {
+
+    return {
+      tasklist : [ ...prevState.tasklist , {
+        title: title,
+        tasks: ['newTask #1' ,'newTask #2', 'newTask #3'],
+        id: (this.previd += 1),}
+      ]
+    }
+  })}
+
 render(){
 
     return(
       <div className='App'>
-       <button onClick={this.switchNamehandler}>Click here to Add New Task</button> 
+       {/* <button onClick={this.switchNamehandler}>Click here to Add New Task</button>  */}
       <Header title="Task List" items={this.state.tasklist.length}/>
 
       {this.state.tasklist.map((t1) => (
-
-      <Tasklist 
+     <Tasklist 
       title={t1.title} 
       item={t1.tasks}
-     added={this.taskaddhandler}
-       
-      />
-      )
-      )}
+      id={t1.id} /> 
+      ))}
+
+      <AddTaskform addtask={this.addNewTask}></AddTaskform>
+
       </div>
     );
   }

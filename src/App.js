@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import Header from './Header';
 import Tasklist from './Tasklist';
 import AddTaskform from './AddTaskform';
+import Taskfilter from './Taskfilter';
 
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
     tasklist: [ { title: 'Humber',tasks: ['Task #1' ,'Task #2', 'Task #3'],id: 1,},
       {title: 'MERN',tasks: ['Lab' ,'Project', 'Quiz'],id: 2, },
       {title: 'Java',tasks: ['GD' ,'Exam', 'Assignment'],id: 3,}, ],
+    filterlist : '', 
   };
   previd = 4;
 
@@ -51,14 +53,34 @@ class App extends Component {
     });
   };
 
+
+  handleFilterTask = (title) => {
+    this.setState((prevState) => {
+      return {
+        filterlist: title,
+      };
+    });
+  };
+
+  
+   
+
+
+
 render(){
+
+
+  let filteredlist = this.state.filterlist === '' ? this.state.tasklist :
+  this.state.tasklist.filter((t) => t.title === this.state.filterlist);
 
     return(
       <div className='App'>
+
+        <Taskfilter tasklist = {this.state.tasklist}  handlefilter={this.handleFilterTask} />
        {/* <button onClick={this.switchNamehandler}>Click here to Add New Task</button>  */}
       <Header title="Task List" items={this.state.tasklist.length}/>
 
-      {this.state.tasklist.map((t1) => (
+      {filteredlist.map((t1) => (
      <Tasklist 
       title={t1.title} 
       item={t1.tasks}

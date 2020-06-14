@@ -3,6 +3,9 @@ import Header from './Header';
 import Tasklist from './Tasklist';
 import AddTaskform from './AddTaskform';
 import Taskfilter from './Taskfilter';
+import Home from './Home';
+import Post from './Post';
+import Todo from './Todo';
 
 
 class App extends Component {

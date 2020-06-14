@@ -18,7 +18,7 @@ const Navigation = (props)=> {
                  <NavLink to='/todo'>Todo</NavLink>
              </li>
              <li>
-                 <NavLink to='/tasklist'>Tasklist</NavLink>
+                 <NavLink to='/maintasklist'>Tasklist</NavLink>
              </li>
 
              </ul>              

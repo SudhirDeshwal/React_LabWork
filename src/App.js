@@ -7,7 +7,8 @@ import Home from './Home';
 import Post from './Post';
 import Todo from './Todo';
 import Navigation from './Navigation';
-
+import {BrowserRouter, Route , Switch} from 'react-router-dom'
+import PageNotFound from './PageNotFound';
 
 class App extends Component {
   state = {
@@ -66,9 +67,20 @@ render(){
     return(
       <div className='App'>
 
-          <Navigation></Navigation>
+<BrowserRouter>
+      <div>
+        <Navigation />
+          <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/post' component={Post} />
+          <Route path='/todo' component={Todo} />
+          <Route path='/tasklist' component={Tasklist} />
+          <Route component={PageNotFound} />
+          </Switch>
+      </div>
+    </BrowserRouter>
 
-       <Taskfilter tasklist = {this.state.tasklist}  handlefilter={this.handleFilterTask} />
+    <Taskfilter tasklist = {this.state.tasklist}  handlefilter={this.handleFilterTask} />
        {/* <button onClick={this.switchNamehandler}>Click here to Add New Task</button>  */}
       <Header title="Task List" items={this.state.tasklist.length}/>
 
@@ -81,6 +93,7 @@ render(){
       ))}
 
       <AddTaskform addtask={this.addNewTask}></AddTaskform>
+      
       
 
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 const Navigation = (props)=> {
 
@@ -8,16 +9,16 @@ const Navigation = (props)=> {
 
          <ul>
              <li>
-                 <a href= '/'>Home</a>
+                 <NavLink to='/' exact>Home</NavLink>
              </li>
              <li>
-                 <a href= '/post'>Post</a>
+                 <NavLink  to='/post'>Post</NavLink>
              </li>
              <li>
-                 <a href= '/tasklist'>Tasklist</a>
+                 <NavLink to='/todo'>Todo</NavLink>
              </li>
              <li>
-                 <a href= '/todo'>Todo</a>
+                 <NavLink to='/tasklist'>Tasklist</NavLink>
              </li>
 
              </ul>              

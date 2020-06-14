@@ -15,23 +15,9 @@ class App extends Component {
   };
   previd = 4;
 
- switchNamehandler =() => {
+ 
 
-         this.setState({tasklist : [ { title: 'Humber',tasks: ['Task #1' ,'Task #2', 'Task #3'],id: 1,},
-         {title: 'MERN',tasks: ['Lab' ,'Project', 'Quiz'],id: 2, },
-         {title: 'Java',tasks: ['GD' ,'Exam', 'Assignment'],id: 3,},
-         {title: 'Home',tasks: ['Food' ,'Laundry', 'Homecall'],id: 3,}, ] })
- }
-
- taskaddhandler = (event) => {
-
-  this.setState({tasklist : [ { title: 'Humber',tasks: ['Task #1' ,'Task #2', 'Task #3'],id: 1,},
-  {title: 'MERN',tasks: ['Lab' ,'Project', 'Quiz'],id: 2, },
-  {title: event.target.value, tasks: ['GD' ,'Exam', 'Assignment'],id: 3,},
-  {title: 'Home',tasks: ['Food' ,'Laundry', 'Homecall'],id: 3,}, ] })
-
- }
-
+ 
  addNewTask = (title, tasks) => {
 
   this.setState((prevState) => {

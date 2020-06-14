@@ -10,6 +10,16 @@ const Navigation = (props)=> {
              <li>
                  <a href= '/'>Home</a>
              </li>
+             <li>
+                 <a href= '/post'>Post</a>
+             </li>
+             <li>
+                 <a href= '/tasklist'>Tasklist</a>
+             </li>
+             <li>
+                 <a href= '/todo'>Todo</a>
+             </li>
+
              </ul>              
           </nav>
          </div>

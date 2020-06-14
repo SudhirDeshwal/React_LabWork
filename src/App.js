@@ -66,7 +66,9 @@ render(){
     return(
       <div className='App'>
 
-        <Taskfilter tasklist = {this.state.tasklist}  handlefilter={this.handleFilterTask} />
+          <Navigation></Navigation>
+
+       <Taskfilter tasklist = {this.state.tasklist}  handlefilter={this.handleFilterTask} />
        {/* <button onClick={this.switchNamehandler}>Click here to Add New Task</button>  */}
       <Header title="Task List" items={this.state.tasklist.length}/>
 
@@ -79,6 +81,7 @@ render(){
       ))}
 
       <AddTaskform addtask={this.addNewTask}></AddTaskform>
+      
 
       </div>
     );

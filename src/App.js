@@ -10,6 +10,8 @@ import Navigation from './Navigation';
 import {BrowserRouter, Route , Switch} from 'react-router-dom'
 import PageNotFound from './PageNotFound';
 import MainTasklist from './MainTasklist';
+import Mainpost from './Mainpost';
+
 
 function App() {
 
@@ -19,7 +21,7 @@ function App() {
         <Navigation />
           <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/post' component={Post} />
+          <Route path='/mainpost' component={Mainpost} />
           <Route path='/todo' component={Todo} />
           <Route path='/maintasklist' component={MainTasklist} />
           <Route component={PageNotFound} />

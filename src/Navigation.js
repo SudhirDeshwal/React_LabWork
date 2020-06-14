@@ -12,7 +12,7 @@ const Navigation = (props)=> {
                  <NavLink to='/' exact>Home</NavLink>
              </li>
              <li>
-                 <NavLink  to='/post'>Post</NavLink>
+                 <NavLink  to='/mainpost'>Post</NavLink>
              </li>
              <li>
                  <NavLink to='/todo'>Todo</NavLink>
